@@ -1,141 +1,82 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import ImagePlaceholder from './ImagePlaceholder';
 
 const ConclusionSection = ({ data }) => {
   return (
-    <section className="conclusion-section">
+    <section id="conclusion" className="relative w-full min-h-screen flex items-center justify-center bg-white overflow-hidden border-t-8 border-soviet-red">
       {/* Background */}
-      <div className="conclusion-section__bg primary-gradient-deep">
-        <div className="ambient-orb" style={{ width: 700, height: 700, top: '5%', right: '-10%', background: '#6b5b95', animationDelay: '0s' }} />
-        <div className="ambient-orb" style={{ width: 500, height: 500, bottom: '10%', left: '5%', background: '#1a3a5c', animationDelay: '4s' }} />
+      {data.image && (
+        <>
+          <img
+            src={data.image}
+            alt="Kết luận"
+            className="absolute inset-0 w-full h-full object-cover"
+            onError={(e) => { e.target.style.display = 'none'; }}
+          />
+          <div className="absolute inset-0 bg-black/50" />
+        </>
+      )}
+      {!data.image && (
+        <div className="absolute inset-0 bg-gradient-to-br from-soviet-red/5 via-white to-soviet-gold/5" />
+      )}
 
-        <div style={{
-          position: 'absolute', inset: 0,
-          backgroundImage: `
-            linear-gradient(rgba(107,91,149,0.06) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(107,91,149,0.06) 1px, transparent 1px)
-          `,
-          backgroundSize: '60px 60px',
-        }} />
-      </div>
-
-      <div style={{
-        position: 'absolute', top: 40, left: 40, width: 100, height: 100,
-        borderTop: '2px solid rgba(107,91,149,0.25)', borderLeft: '2px solid rgba(107,91,149,0.25)',
-        borderTopLeftRadius: 16,
-      }} />
-      <div style={{
-        position: 'absolute', bottom: 40, right: 40, width: 80, height: 80,
-        borderBottom: '2px solid rgba(107,91,149,0.2)', borderRight: '2px solid rgba(107,91,149,0.2)',
-        borderBottomRightRadius: 16,
-      }} />
-
-      <div className="conclusion-section__content">
+      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto py-24">
         <motion.div
-          className="conclusion-section__quote-mark"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-6"
         >
-          "
+          <div className="inline-block bg-soviet-red text-white px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em] shadow-lg shadow-soviet-red/20">
+            {data.label}
+          </div>
         </motion.div>
 
-        <motion.div
-          className="presentation-section__label"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          style={{ marginBottom: 24 }}
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter text-zinc-900 uppercase leading-none mb-12"
         >
-          {data.label}
-        </motion.div>
-
-        <h2 className="conclusion-section__title">
-          <motion.span
-            className="conclusion-section__title-line conclusion-section__title-line--line1"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.7 }}
-          >
-            {data.titleLine1}
-          </motion.span>
-          <motion.span
-            className="conclusion-section__title-line conclusion-section__title-line--line2"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.55, duration: 0.7 }}
-          >
-            {data.titleLine2}
-          </motion.span>
-          <motion.span
-            className="conclusion-section__title-line conclusion-section__title-line--line3"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.7 }}
-          >
-            {data.titleLine3}
-          </motion.span>
-        </h2>
+          {data.titleLine1}
+          <br />
+          <span className="text-soviet-red">{data.titleLine2}</span>
+          <br />
+          <span className="text-zinc-500">{data.titleLine3}</span>
+        </motion.h2>
 
         <motion.div
-          className="conclusion-section__divider"
           initial={{ opacity: 0, scaleX: 0 }}
-          animate={{ opacity: 1, scaleX: 1 }}
-          transition={{ delay: 0.9, duration: 0.6 }}
-        >
-          <div className="conclusion-section__divider-line" />
-          <div className="conclusion-section__divider-dot" />
-          <div className="conclusion-section__divider-line" />
-        </motion.div>
+          whileInView={{ opacity: 1, scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="w-48 h-1.5 bg-soviet-red mx-auto mb-12 rounded-full shadow-sm shadow-soviet-red/30"
+        />
 
         <motion.p
-          className="conclusion-section__message"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.8 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="text-xl md:text-3xl font-serif italic text-zinc-700 leading-snug mb-12"
         >
-          {data.message}
+          "{data.message}"
         </motion.p>
 
-        {/* Highlighted final message */}
-        {data.highlight && (
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.8 }}
-            style={{
-              marginTop: 32,
-              padding: '20px 32px',
-              borderRadius: 16,
-              background: 'rgba(255,255,255,0.07)',
-              backdropFilter: 'blur(8px)',
-              border: '1px solid rgba(107,91,149,0.25)',
-              display: 'inline-block',
-              maxWidth: 600,
-            }}
-          >
-            <div style={{
-              fontSize: '0.65rem',
-              fontWeight: 700,
-              letterSpacing: '0.2em',
-              textTransform: 'uppercase',
-              color: 'rgba(139,123,181,0.7)',
-              marginBottom: 8,
-            }}>
-              Thông điệp
-            </div>
-            <p style={{
-              fontSize: 'clamp(0.95rem, 1.5vw, 1.1rem)',
-              fontWeight: 700,
-              color: 'white',
-              lineHeight: 1.6,
-              fontFamily: "'Lora', serif",
-              fontStyle: 'italic',
-            }}>
-              "{data.highlight}"
-            </p>
-          </motion.div>
-        )}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.7 }}
+          className="inline-block"
+        >
+          <div className="px-8 py-4 bg-soviet-gold text-white font-black text-xs uppercase tracking-[0.2em] rounded-full shadow-lg shadow-soviet-gold/20">
+            Bình đẳng giới &bull; Mọi nạn nhân đều xứng đáng được bảo vệ
+          </div>
+        </motion.div>
       </div>
     </section>
   );

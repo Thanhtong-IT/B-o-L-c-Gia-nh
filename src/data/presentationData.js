@@ -1,243 +1,143 @@
 export const presentationData = {
   hero: {
-    label: "Thuyết trình học thuật",
-    title: "Nam giới",
-    titleLine2: "là nạn nhân",
-    titleLine3: "bạo lực gia đình",
+    label: "Bài thuyết trình học thuật",
+    title: "NAM GIỚI",
+    titleLine2: "LÀ NẠN NHÂN",
+    titleLine3: "BẠO LỰC GIA ĐÌNH",
     subtitle: "Một góc nhìn ít được nhìn thấy trong xã hội hiện đại",
-    description: "Bạo lực gia đình không phân biệt giới tính.\nNam giới cũng có thể là nạn nhân cần được lắng nghe và bảo vệ.",
-    image: "/image/hero.jpg",
+    description: "Bạo lực gia đình không phân biệt giới tính. Nam giới cũng có thể là nạn nhân cần được lắng nghe, bảo vệ và hỗ trợ.",
+    image: "/images/hero.jpg",
   },
 
-  globalStats: {
+  intro: {
+    label: "Giới thiệu",
+    title: "Vì sao cần nói về vấn đề này?",
+    points: [
+      "Nam giới thường bị kỳ vọng phải mạnh mẽ và im lặng.",
+      "Nhiều nạn nhân sợ bị cười nhạo hoặc không được tin tưởng.",
+      "Sự im lặng khiến họ trở thành nhóm nạn nhân ít được nhìn thấy.",
+    ],
+    image: "/images/intro.jpg",
+  },
+
+  global: {
     label: "Thực trạng toàn cầu",
     title: "Nam giới cũng có thể là nạn nhân",
     bigNumber: "33% – 50%",
-    bigLabel: "Tỷ lệ nam giới từng bị bạo lực tâm lý hoặc thể chất từ bạn đời",
+    bigLabel: "Tỷ lệ nam giới trong một số nhóm nạn nhân bạo lực gia đình được ghi nhận ở nhiều quốc gia.",
     cards: [
-      {
-        icon: "brain",
-        title: "Bạo lực tinh thần",
-        desc: "Xúc phạm, hạ nhục, đe dọa trong mối quan hệ gia đình"
-      },
-      {
-        icon: "wallet",
-        title: "Kiểm soát tài chính",
-        desc: "Bị giữ tiền, kiểm soát chi tiêu, phụ thuộc kinh tế"
-      },
-      {
-        icon: "target",
-        title: "Thao túng tâm lý",
-        desc: "Ghen tuông quá mức, cô lập, khống chế bằng tâm lý"
-      }
+      { icon: "brain", title: "Bạo lực tinh thần", desc: "Xúc phạm, hạ nhục, đe dọa trong gia đình" },
+      { icon: "wallet", title: "Kiểm soát tài chính", desc: "Bị giữ tiền, kiểm soát chi tiêu, phụ thuộc kinh tế" },
+      { icon: "target", title: "Thao túng tâm lý", desc: "Ghen tuông quá mức, cô lập, khống chế bằng tâm lý" },
+      { icon: "shield", title: "Đe dọa quyền nuôi con", desc: "Dùng con cái làm công cụ kiểm soát và trừng phạt" },
     ],
-    image: "/image/global.jpg"
+    image: "/images/global.jpg",
   },
 
-  silenceReasons: {
-    label: "Vì sao họ im lặng?",
-    title: "Rào cản khiến nam giới không tìm kiếm sự giúp đỡ",
-    reasons: [
-      {
-        icon: "frown",
-        emoji: "😔",
-        title: "Xấu hổ",
-        desc: "Sợ bị coi là yếu đuối, mất hình ảnh đàn ông trưởng thành"
-      },
-      {
-        icon: "users",
-        emoji: "😟",
-        title: "Sợ bị cười nhạo",
-        desc: "Định kiến xã hội khiến nạn nhân nam bị chế nhạo thay vì được đồng cảm"
-      },
-      {
-        icon: "help",
-        emoji: "🤐",
-        title: "Không được tin tưởng",
-        desc: "Nạn nhân thường bị nghi ngờ hoặc phản ứng ngược khi lên tiếng"
-      },
-      {
-        icon: "shield",
-        emoji: "💪",
-        title: "Áp lực phải mạnh mẽ",
-        desc: "Nam giới được kỳ vọng phải tự giải quyết, không được yếu đuối"
-      }
+  silence: {
+    label: "Vì sao im lặng?",
+    title: "Vì sao họ ít lên tiếng?",
+    cards: [
+      { icon: "frown", title: "Xấu hổ", desc: "Sợ bị xem là yếu đuối." },
+      { icon: "users", title: "Sợ bị cười nhạo", desc: "Định kiến khiến họ không dám chia sẻ." },
+      { icon: "help", title: "Không được tin tưởng", desc: "Xã hội khó chấp nhận đàn ông là nạn nhân." },
+      { icon: "shield", title: "Áp lực nam tính", desc: "Phải mạnh mẽ, chịu đựng, không được yếu mềm." },
     ],
-    image: "/image/silence.jpg"
-  },
-
-  vietnamStats: {
-    label: "Thực trạng Việt Nam",
-    title: "Bằng chứng từ nghiên cứu tại Việt Nam",
-    highlightStats: [
-      {
-        number: "379",
-        label: "Nam giới",
-        sub: "Được tư vấn tại Trung tâm HTBNN bạo lực gia đình (2020–2022)",
-        icon: "users"
-      },
-      {
-        number: "17,6%",
-        label: "Tỷ lệ",
-        sub: "Nam giới 15+ từng bị đánh đập hoặc xúc phạm bởi vợ/bạn đời (2023)",
-        icon: "percent"
-      },
-      {
-        number: "+92",
-        label: "So với năm trước",
-        sub: "Số ca nam giới được ghi nhận tại các trung tâm tư vấn",
-        icon: "trendingUp"
-      },
-      {
-        number: "2030",
-        label: "Mục tiêu",
-        sub: "Hỗ trợ toàn diện nạn nhân bạo lực gia đình — Chiến lược phát triển gia đình",
-        icon: "target"
-      }
-    ],
-    chartLabel: "Xu hướng ghi nhận nam giới là nạn nhân bạo lực gia đình tại Việt Nam",
-    image: "/image/vietnam.jpg"
+    image: "/images/silence.jpg",
   },
 
   consequences: {
     label: "Hậu quả",
     title: "Bạo lực gia đình để lại vết thương sâu",
     items: [
-      {
-        icon: "frown",
-        title: "Trầm cảm",
-        desc: "Suy giảm chất lượng cuộc sống nghiêm trọng"
-      },
-      {
-        icon: "alertTriangle",
-        title: "Lo âu",
-        desc: "Căng thẳng kéo dài, khó kiểm soát cảm xúc"
-      },
-      {
-        icon: "brain",
-        title: "PTSD",
-        desc: "Ám ảnh sau sang chấn, mất ngủ triền miên"
-      },
-      {
-        icon: "clock",
-        title: "Căng thẳng",
-        desc: "Ảnh hưởng công việc và đời sống gia đình"
-      },
-      {
-        icon: "pill",
-        title: "Nghiện chất",
-        desc: "Tìm cách giải tỏa tiêu cực, rượu bia, thuốc lá"
-      }
+      { icon: "frown", title: "Trầm cảm", desc: "Suy giảm chất lượng cuộc sống." },
+      { icon: "alert", title: "Lo âu", desc: "Căng thẳng kéo dài." },
+      { icon: "brain", title: "PTSD", desc: "Ám ảnh sau sang chấn." },
+      { icon: "pill", title: "Nghiện chất", desc: "Tìm cách giải tỏa tiêu cực." },
+      { icon: "userX", title: "Tự cô lập", desc: "Ngại chia sẻ và tìm kiếm hỗ trợ." },
     ],
-    image: "/image/consequences.jpg"
   },
 
-  academicView: {
-    label: "Góc nhìn học thuật",
-    title: "Gia đình bình đẳng — nền tảng của xã hội tiến bộ",
-    cards: [
-      {
-        icon: "scale",
-        title: "Gia đình bình đẳng",
-        desc: "Dựa trên sự tôn trọng, tự nguyện và bình đẳng giữa các thành viên"
-      },
-      {
-        icon: "heart",
-        title: "Tôn trọng lẫn nhau",
-        desc: "Mọi thành viên có quyền được lắng nghe, được bảo vệ và phát triển"
-      },
-      {
-        icon: "shield",
-        title: "Không bạo lực",
-        desc: "Bạo lực gia đình đi ngược lại bản chất tốt đẹp và giá trị gia đình"
-      }
+  vietnam: {
+    label: "Thực trạng Việt Nam",
+    title: "Nam giới – nạn nhân \"vô hình\" tại Việt Nam",
+    stats: [
+      { number: "379", label: "Nam giới", sub: "Bị bạo lực gia đình theo số liệu trong bài." },
+      { number: "17,6%", label: "Tỷ lệ", sub: "Nam giới bị bạo hành năm 2023." },
+      { number: "+92", label: "So với năm trước", sub: "Số nam giới tăng." },
+      { number: "2030", label: "Mục tiêu", sub: "Mở rộng tiếp cận dịch vụ hỗ trợ." },
     ],
-    quote: "Gia đình là tế bào của xã hội. Nếu tế bào không khỏe mạnh, cơ thể sẽ ốm yếu.",
+    description: "Số liệu cho thấy vấn đề đang tồn tại nhưng vẫn chưa được nhìn nhận đầy đủ.",
+    image: "/images/vietnam.jpg",
+  },
+
+  academic: {
+    label: "Góc nhìn học thuật",
+    title: "Gia đình bình đẳng – nền tảng của xã hội tiến bộ",
+    cards: [
+      { icon: "scale", title: "Bình đẳng", desc: "Mọi thành viên đều có quyền được tôn trọng." },
+      { icon: "heart", title: "Tự nguyện", desc: "Gia đình không thể xây dựng bằng ép buộc." },
+      { icon: "shield", title: "Không bạo lực", desc: "Bạo lực đi ngược lại giá trị tốt đẹp của gia đình." },
+    ],
+    quote: "Gia đình là tế bào của xã hội.",
     quoteAuthor: "Hồ Chí Minh",
-    quoteNote: "Tư tưởng Hồ Chí Minh nhấn mạnh gia đình là nền tảng của xã hội, nơi mỗi thành viên đều xứng đáng được bảo vệ."
+    image: "/images/academic.jpg",
   },
 
   policyGap: {
-    label: "Khoảng trống cần được nhìn nhận",
-    title: "Thực trạng hỗ trợ nam giới — còn nhiều bỏ ngỏ",
-    items: [
-      {
-        icon: "barChart",
-        title: "Thiếu dữ liệu",
-        desc: "Số liệu về nam giới là nạn nhân bạo lực gia đình còn rất hạn chế và thiếu hệ thống"
-      },
-      {
-        icon: "megaphone",
-        title: "Ít chiến dịch truyền thông",
-        desc: "Hầu hết chiến dịch nhận thức chỉ tập trung vào nạn nhân nữ và trẻ em"
-      },
-      {
-        icon: "heartOff",
-        title: "Hỗ trợ còn hạn chế",
-        desc: "Các trung tâm hỗ trợ chủ yếu phục vụ phụ nữ và trẻ em, nam giới ít được tiếp cận"
-      }
+    label: "Khoảng trống",
+    title: "Khoảng trống cần được nhìn nhận",
+    cards: [
+      { icon: "barChart", title: "Thiếu dữ liệu", desc: "Nam giới ít được đại diện trong thống kê." },
+      { icon: "megaphone", title: "Ít truyền thông", desc: "Chiến dịch thường tập trung vào phụ nữ và trẻ em." },
+      { icon: "heartOff", title: "Hỗ trợ hạn chế", desc: "Nam giới khó tiếp cận tư vấn, pháp lý và nơi trú ẩn." },
+      { icon: "users", title: "Định kiến xã hội", desc: "Nhiều người vẫn nghĩ đàn ông không thể là nạn nhân." },
     ],
-    image: "/image/policy.jpg"
+    image: "/images/support-gap.jpg",
   },
 
-  lawTimeline: {
-    label: "Pháp luật Việt Nam",
-    title: "Khung pháp lý bảo vệ nạn nhân bạo lực gia đình",
+  law: {
+    label: "Pháp luật",
+    title: "Khung pháp lý bảo vệ mọi nạn nhân",
     items: [
-      {
-        year: "2013",
-        title: "Hiến pháp nước CHXHCN Việt Nam",
-        desc: "Khẳng định mọi người đều bình đẳng trước pháp luật, không phân biệt giới tính"
-      },
-      {
-        year: "2022",
-        title: "Luật Phòng, chống bạo lực gia đình",
-        desc: "Bảo vệ nạn nhân trước các hành vi gây tổn hại thể chất, tinh thần, tình dục và kinh tế"
-      },
-      {
-        year: "2025",
-        title: "Nghị định mở rộng nhận diện",
-        desc: "Mở rộng nhận diện các hình thức bạo lực tinh thần và thao túng trong gia đình"
-      },
-      {
-        year: "2030",
-        title: "Chiến lược phát triển gia đình Việt Nam",
-        desc: "Hướng tới gia đình Việt Nam no ấm, tiến bộ, hạnh phúc, bình đẳng"
-      }
-    ]
+      { year: "2013", title: "Hiến pháp Việt Nam", desc: "Mọi người đều bình đẳng trước pháp luật." },
+      { year: "2006", title: "Luật Bình đẳng giới", desc: "Nam và nữ bình đẳng trong gia đình và xã hội." },
+      { year: "2022", title: "Luật Phòng, chống bạo lực gia đình", desc: "Bảo vệ nạn nhân trước tổn hại thể chất, tinh thần, tình dục và kinh tế." },
+      { year: "2030", title: "Chiến lược phát triển gia đình Việt Nam", desc: "Hướng tới gia đình no ấm, tiến bộ, hạnh phúc, bình đẳng." },
+    ],
+    image: "/images/law.jpg",
   },
 
-  youthResponsibility: {
-    label: "Trách nhiệm thế hệ trẻ",
+  youth: {
+    label: "Thế hệ trẻ",
     title: "Thay đổi bắt đầu từ nhận thức",
     cards: [
-      {
-        number: "01",
-        icon: "eye",
-        title: "Thay đổi nhận thức",
-        desc: "Phá bỏ định kiến: đàn ông không thể là nạn nhân. Mọi người đều có quyền được bảo vệ."
-      },
-      {
-        number: "02",
-        icon: "users",
-        title: "Tôn trọng lẫn nhau",
-        desc: "Xây dựng gia đình dựa trên đối thoại, thấu hiểu và bình đẳng giữa các thành viên."
-      },
-      {
-        number: "03",
-        icon: "code",
-        title: "Ứng dụng công nghệ",
-        desc: "IT, truyền thông và thiết kế có thể tạo giải pháp hỗ trợ nạn nhân tiếp cận sự giúp đỡ."
-      }
-    ]
+      { number: "01", icon: "eye", title: "Phá bỏ định kiến", desc: "Đàn ông cũng có thể là nạn nhân." },
+      { number: "02", icon: "users", title: "Tôn trọng lẫn nhau", desc: "Gia đình cần đối thoại và bình đẳng." },
+      { number: "03", icon: "code", title: "Ứng dụng công nghệ", desc: "Tạo nền tảng hỗ trợ và kết nối nạn nhân." },
+      { number: "04", icon: "megaphone", title: "Lan tỏa nhận thức", desc: "Truyền thông đúng giúp giảm im lặng." },
+    ],
+    image: "/images/youth.jpg",
+  },
+
+  tools: {
+    label: "Phụ lục",
+    title: "Công cụ hỗ trợ thực hiện",
+    cards: [
+      { icon: "cursor", title: "Cursor", desc: "Hỗ trợ chỉnh sửa code, refactor layout và xây dựng giao diện React." },
+      { icon: "bot", title: "ChatGPT", desc: "Hỗ trợ rút gọn nội dung, lên ý tưởng và viết lời thuyết trình." },
+      { icon: "sparkles", title: "Gemini", desc: "Hỗ trợ gợi ý hình ảnh minh họa và kiểm tra nội dung." },
+      { icon: "github", title: "GitHub", desc: "Lưu trữ mã nguồn." },
+      { icon: "globe", title: "Vercel", desc: "Deploy website để chia sẻ link." },
+    ],
   },
 
   conclusion: {
     label: "Kết luận",
-    titleLine1: "Im lặng",
-    titleLine2: "không có nghĩa",
-    titleLine3: "là không tổn thương",
-    message: "Bạo lực gia đình không phân biệt giới tính.\nMọi nạn nhân đều xứng đáng được lắng nghe và bảo vệ.",
-    highlight: "Mọi nạn nhân đều xứng đáng được lắng nghe, bảo vệ và hỗ trợ."
-  }
+    titleLine1: "IM LẶNG",
+    titleLine2: "KHÔNG CÓ NGHĨA",
+    titleLine3: "LÀ KHÔNG TỔN THƯƠNG",
+    message: "Bạo lực gia đình không phân biệt giới tính. Mọi nạn nhân đều xứng đáng được lắng nghe, bảo vệ và hỗ trợ.",
+    image: "/images/conclusion.jpg",
+  },
 };

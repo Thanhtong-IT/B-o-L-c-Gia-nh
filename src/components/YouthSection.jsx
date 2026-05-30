@@ -1,18 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BarChart2, Megaphone, HeartOff, Users } from 'lucide-react';
+import { Eye, Users, Code, Megaphone } from 'lucide-react';
 import ImagePlaceholder from './ImagePlaceholder';
 
 const ICON_MAP = {
-  barChart: <BarChart2 className="w-7 h-7 text-soviet-red" />,
-  megaphone: <Megaphone className="w-7 h-7 text-soviet-red" />,
-  heartOff: <HeartOff className="w-7 h-7 text-soviet-red" />,
+  eye: <Eye className="w-7 h-7 text-soviet-red" />,
   users: <Users className="w-7 h-7 text-soviet-red" />,
+  code: <Code className="w-7 h-7 text-soviet-red" />,
+  megaphone: <Megaphone className="w-7 h-7 text-soviet-red" />,
 };
 
-const PolicyGapSection = ({ data }) => {
+const YouthSection = ({ data }) => {
   return (
-    <section id="policy" className="py-24 px-6 bg-white border-b border-zinc-100">
+    <section id="youth" className="py-24 px-6 bg-white border-b border-zinc-100">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -30,23 +30,24 @@ const PolicyGapSection = ({ data }) => {
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Cards */}
-          <div className="space-y-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {data.cards.map((card, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.12 }}
-                className="glow-card p-5 rounded-xl flex items-start gap-4 group"
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="glow-card p-6 rounded-xl group"
               >
-                <div className="flex-shrink-0 transform transition-transform group-hover:scale-110 duration-300 p-3 bg-soviet-red/5 rounded-lg">
-                  {ICON_MAP[card.icon] || ICON_MAP.barChart}
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="text-[10px] font-black text-soviet-red/50 tracking-widest">{card.number}</div>
+                  <div className="transform transition-transform group-hover:scale-110 duration-300 p-2 bg-soviet-red/5 rounded-lg">
+                    {ICON_MAP[card.icon] || ICON_MAP.eye}
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-base font-bold text-zinc-900 mb-1">{card.title}</h3>
-                  <p className="text-zinc-500 text-sm leading-relaxed">{card.desc}</p>
-                </div>
+                <h3 className="text-base font-bold text-zinc-900 mb-2">{card.title}</h3>
+                <p className="text-zinc-500 text-sm leading-relaxed">{card.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -59,7 +60,7 @@ const PolicyGapSection = ({ data }) => {
             transition={{ duration: 0.7 }}
             className="h-72 md:h-96"
           >
-            <ImagePlaceholder src={data.image} alt="Khoảng trống chính sách" className="w-full h-full" />
+            <ImagePlaceholder src={data.image} alt="Thế hệ trẻ" className="w-full h-full" />
           </motion.div>
         </div>
       </div>
@@ -67,4 +68,4 @@ const PolicyGapSection = ({ data }) => {
   );
 };
 
-export default PolicyGapSection;
+export default YouthSection;

@@ -1,23 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BarChart2, Megaphone, HeartOff, Users } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 import ImagePlaceholder from './ImagePlaceholder';
 
-const ICON_MAP = {
-  barChart: <BarChart2 className="w-7 h-7 text-soviet-red" />,
-  megaphone: <Megaphone className="w-7 h-7 text-soviet-red" />,
-  heartOff: <HeartOff className="w-7 h-7 text-soviet-red" />,
-  users: <Users className="w-7 h-7 text-soviet-red" />,
-};
-
-const PolicyGapSection = ({ data }) => {
+const IntroSection = ({ data }) => {
   return (
-    <section id="policy" className="py-24 px-6 bg-white border-b border-zinc-100">
+    <section id="intro" className="py-24 px-6 bg-white border-b border-zinc-100">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
           <div className="mb-4 inline-block bg-soviet-red/10 text-soviet-red px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.25em]">
@@ -29,24 +23,23 @@ const PolicyGapSection = ({ data }) => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Cards */}
-          <div className="space-y-5">
-            {data.cards.map((card, i) => (
+          {/* Points */}
+          <div className="space-y-6">
+            {data.points.map((point, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.12 }}
-                className="glow-card p-5 rounded-xl flex items-start gap-4 group"
+                transition={{ duration: 0.5, delay: i * 0.15 }}
+                className="flex items-start gap-4 p-6 rounded-xl glow-card"
               >
-                <div className="flex-shrink-0 transform transition-transform group-hover:scale-110 duration-300 p-3 bg-soviet-red/5 rounded-lg">
-                  {ICON_MAP[card.icon] || ICON_MAP.barChart}
+                <div className="flex-shrink-0 w-8 h-8 bg-soviet-red/10 rounded-full flex items-center justify-center">
+                  <CheckCircle className="w-5 h-5 text-soviet-red" />
                 </div>
-                <div>
-                  <h3 className="text-base font-bold text-zinc-900 mb-1">{card.title}</h3>
-                  <p className="text-zinc-500 text-sm leading-relaxed">{card.desc}</p>
-                </div>
+                <p className="text-zinc-700 text-base leading-relaxed font-medium pt-1">
+                  {point}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -57,9 +50,9 @@ const PolicyGapSection = ({ data }) => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="h-72 md:h-96"
+            className="h-80 md:h-96"
           >
-            <ImagePlaceholder src={data.image} alt="Khoảng trống chính sách" className="w-full h-full" />
+            <ImagePlaceholder src={data.image} alt="Giới thiệu" className="w-full h-full" />
           </motion.div>
         </div>
       </div>
@@ -67,4 +60,4 @@ const PolicyGapSection = ({ data }) => {
   );
 };
 
-export default PolicyGapSection;
+export default IntroSection;

@@ -1,21 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Frown, AlertTriangle, Brain, Pill, UserX } from 'lucide-react';
-
-const ICON_SIZE = 28;
+import { MousePointerClick, Bot, Sparkles, Github, Globe } from 'lucide-react';
 
 const ICON_MAP = {
-  frown: <Frown size={ICON_SIZE} strokeWidth={1.5} />,
-  alert: <AlertTriangle size={ICON_SIZE} strokeWidth={1.5} />,
-  brain: <Brain size={ICON_SIZE} strokeWidth={1.5} />,
-  pill: <Pill size={ICON_SIZE} strokeWidth={1.5} />,
-  userX: <UserX size={ICON_SIZE} strokeWidth={1.5} />,
+  cursor: <MousePointerClick className="w-7 h-7 text-soviet-red" />,
+  bot: <Bot className="w-7 h-7 text-soviet-red" />,
+  sparkles: <Sparkles className="w-7 h-7 text-soviet-red" />,
+  github: <Github className="w-7 h-7 text-soviet-red" />,
+  globe: <Globe className="w-7 h-7 text-soviet-red" />,
 };
 
-const ConsequencesSection = ({ data }) => {
+const ToolsSection = ({ data }) => {
   return (
-    <section id="consequences" className="py-24 px-6 bg-soviet-offwhite border-t border-zinc-200">
-      <div className="max-w-6xl mx-auto">
+    <section id="tools" className="py-24 px-6 bg-soviet-offwhite border-t border-zinc-200">
+      <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -31,7 +29,7 @@ const ConsequencesSection = ({ data }) => {
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-          {data.items.map((item, i) => (
+          {data.cards.map((card, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
@@ -41,12 +39,10 @@ const ConsequencesSection = ({ data }) => {
               className="glow-card p-6 rounded-xl text-center group"
             >
               <div className="mb-4 mx-auto transform transition-transform group-hover:scale-110 duration-300 p-3 bg-soviet-red/5 rounded-full w-fit">
-                <div className="text-soviet-red">
-                  {ICON_MAP[item.icon] || ICON_MAP.frown}
-                </div>
+                {ICON_MAP[card.icon] || ICON_MAP.cursor}
               </div>
-              <h3 className="text-sm font-bold text-zinc-900 mb-2">{item.title}</h3>
-              <p className="text-zinc-500 text-xs leading-relaxed">{item.desc}</p>
+              <h3 className="text-sm font-bold text-zinc-900 mb-2">{card.title}</h3>
+              <p className="text-zinc-500 text-xs leading-relaxed">{card.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -55,4 +51,4 @@ const ConsequencesSection = ({ data }) => {
   );
 };
 
-export default ConsequencesSection;
+export default ToolsSection;

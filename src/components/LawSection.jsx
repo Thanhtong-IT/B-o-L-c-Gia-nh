@@ -1,18 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BarChart2, Megaphone, HeartOff, Users } from 'lucide-react';
+import { Scale } from 'lucide-react';
 import ImagePlaceholder from './ImagePlaceholder';
 
-const ICON_MAP = {
-  barChart: <BarChart2 className="w-7 h-7 text-soviet-red" />,
-  megaphone: <Megaphone className="w-7 h-7 text-soviet-red" />,
-  heartOff: <HeartOff className="w-7 h-7 text-soviet-red" />,
-  users: <Users className="w-7 h-7 text-soviet-red" />,
-};
-
-const PolicyGapSection = ({ data }) => {
+const LawSection = ({ data }) => {
   return (
-    <section id="policy" className="py-24 px-6 bg-white border-b border-zinc-100">
+    <section id="law" className="py-24 px-6 bg-soviet-offwhite border-t border-zinc-200">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -28,24 +21,24 @@ const PolicyGapSection = ({ data }) => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Cards */}
-          <div className="space-y-5">
-            {data.cards.map((card, i) => (
+        <div className="grid md:grid-cols-2 gap-8 items-start">
+          {/* Timeline */}
+          <div className="space-y-6">
+            {data.items.map((item, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.12 }}
-                className="glow-card p-5 rounded-xl flex items-start gap-4 group"
+                transition={{ duration: 0.5, delay: i * 0.15 }}
+                className="flex items-start gap-5 p-5 rounded-xl glow-card"
               >
-                <div className="flex-shrink-0 transform transition-transform group-hover:scale-110 duration-300 p-3 bg-soviet-red/5 rounded-lg">
-                  {ICON_MAP[card.icon] || ICON_MAP.barChart}
+                <div className="flex-shrink-0 w-16 h-16 bg-soviet-red text-white rounded-xl flex flex-col items-center justify-center font-black text-sm shadow-md shadow-soviet-red/20">
+                  {item.year}
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-zinc-900 mb-1">{card.title}</h3>
-                  <p className="text-zinc-500 text-sm leading-relaxed">{card.desc}</p>
+                  <h3 className="text-base font-bold text-zinc-900 mb-1">{item.title}</h3>
+                  <p className="text-zinc-500 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -59,7 +52,7 @@ const PolicyGapSection = ({ data }) => {
             transition={{ duration: 0.7 }}
             className="h-72 md:h-96"
           >
-            <ImagePlaceholder src={data.image} alt="Khoảng trống chính sách" className="w-full h-full" />
+            <ImagePlaceholder src={data.image} alt="Pháp luật" className="w-full h-full" />
           </motion.div>
         </div>
       </div>
@@ -67,4 +60,4 @@ const PolicyGapSection = ({ data }) => {
   );
 };
 
-export default PolicyGapSection;
+export default LawSection;

@@ -1,4 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
+
+const navItems = [
+  { name: 'Giới thiệu', id: 'intro' },
+  { name: 'Toàn cầu', id: 'global' },
+  { name: 'Im lặng', id: 'silence' },
+  { name: 'Hậu quả', id: 'consequences' },
+  { name: 'Việt Nam', id: 'vietnam' },
+  { name: 'Học thuật', id: 'academic' },
+  { name: 'Pháp luật', id: 'law' },
+  { name: 'Thế hệ trẻ', id: 'youth' },
+];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -14,55 +27,45 @@ const Navbar = () => {
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const navLinks = [
-    { label: 'Toàn cầu', id: 'global-stats' },
-    { label: 'Im lặng', id: 'silence' },
-    { label: 'Việt Nam', id: 'vietnam' },
-    { label: 'Hậu quả', id: 'consequences' },
-    { label: 'Học thuật', id: 'academic' },
-    { label: 'Pháp luật', id: 'law' },
-    { label: 'Thế hệ trẻ', id: 'youth' },
-  ];
-
   return (
-    <nav
-      className={`navbar ${scrolled ? 'scrolled' : ''}`}
-      style={scrolled ? {} : {
-        background: 'transparent',
-      }}
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+        scrolled
+          ? 'bg-white/95 backdrop-blur-md py-4 border-b-4 border-soviet-red shadow-xl'
+          : 'bg-transparent py-8'
+      }`}
     >
-      <div className="navbar__inner">
-        <span
-          className="navbar__brand"
-          style={scrolled ? {
-            color: '#1a3a5c',
-          } : {
-            color: 'rgba(255,255,255,0.85)',
-            textShadow: '0 1px 0 rgba(255,255,255,0.2), 0 3px 8px rgba(0,0,0,0.3)',
-          }}
+      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <button
+          onClick={() => scrollTo('hero')}
+          className={`font-black tracking-[0.2em] uppercase text-xs transition-all duration-500 ${
+            scrolled ? 'text-soviet-red scale-105' : 'text-white'
+          }`}
+          style={!scrolled ? { textShadow: '0 2px 8px rgba(0,0,0,0.4)' } : {}}
         >
-          Nam giới &amp; Bạo lực gia đình
-        </span>
+          NAM GIỚI &amp; <span className="text-soviet-orange">BẠO LỰC GIA ĐÌNH</span>
+        </button>
 
-        <div className="navbar__nav" style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
-          {navLinks.map((link) => (
+        <div className="hidden lg:flex gap-8">
+          {navItems.map((item) => (
             <button
-              key={link.id}
-              className="navbar__link"
-              onClick={() => scrollTo(link.id)}
-              style={scrolled ? {
-                color: '#4a5568',
-              } : {
-                color: 'rgba(255,255,255,0.75)',
-                textShadow: '0 1px 0 rgba(0,0,0,0.2)',
-              }}
+              key={item.id}
+              onClick={() => scrollTo(item.id)}
+              className={`font-black text-[10px] uppercase tracking-[0.15em] transition-all duration-300 relative group ${
+                scrolled ? 'text-zinc-500' : 'text-white/80'
+              }`}
+              style={!scrolled ? { textShadow: '0 1px 4px rgba(0,0,0,0.3)' } : {}}
             >
-              {link.label}
+              <span className="group-hover:text-soviet-red transition-colors">{item.name}</span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-soviet-gold transition-all duration-300 group-hover:w-full" />
             </button>
           ))}
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
