@@ -1,52 +1,155 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-const HeroSection = () => {
-  return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden border-b-8 border-soviet-red">
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/image/Gemini_Generated_Image_cylpk3cylpk3cylp.png')" }}
-      />
-      <div className="absolute inset-0 z-0 bg-white/78 backdrop-blur-[1px]" />
-      
-      <div className="z-10 text-center px-4 max-w-5xl">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-        >
-          <div className="mb-4 inline-block bg-soviet-red text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-[0.4em] shadow-lg shadow-soviet-red/20">
-            Học thuyết kinh tế của C. Mác
-          </div>
-          <h1 className="text-5xl md:text-9xl font-bold tracking-tighter mb-8 uppercase leading-none">
-            <span className="inline-block bg-gradient-to-b from-[#CD8D71] via-[#B5735C] to-[#9C5F4D] bg-clip-text text-transparent [text-shadow:0_2px_0_rgba(86,45,35,0.8),0_10px_18px_rgba(0,0,0,0.35)]">
-              Giá trị
-            </span>
-            <br />
-            <span className="inline-block bg-gradient-to-b from-[#F7C948] via-[#E3AF37] to-[#D49B28] bg-clip-text text-transparent [text-shadow:0_2px_0_rgba(120,81,18,0.85),0_10px_18px_rgba(0,0,0,0.35)]">
-              Thặng dư
-            </span>
-          </h1>
-          <div className="w-3 h-3 bg-[#D49B28] mx-auto rounded-full mb-4 shadow-[0_0_12px_rgba(212,155,40,0.65)]" />
-          <div className="h-2 w-48 bg-[#D49B28] mx-auto mb-12 shadow-sm rounded-full" />
-        </motion.div>
+import ImagePlaceholder from './ImagePlaceholder';
 
-        <motion.blockquote
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1.5 }}
-          className="text-2xl md:text-4xl font-serif italic text-[#D6C1A4] leading-tight max-w-4xl mx-auto [text-shadow:0_2px_12px_rgba(0,0,0,0.45)]"
-        >
-          "Tư bản là lao động chết, giống như ma cà rồng, chỉ sống bằng cách hút lao động sống, và sống càng nhiều, hút được càng nhiều lao động."
-          <footer className="mt-8 text-sm md:text-xl font-sans uppercase tracking-[0.3em] text-[#D6C1A4] font-black not-italic flex items-center justify-center gap-3">
-            <span> — KARL</span>
-            <span className="inline-block h-6 w-[2px] bg-[#E74C3C]" />
-            <span>MARX —</span>
-          </footer>
-        </motion.blockquote>
+const HeroSection = ({ data }) => {
+  const scrollToContent = () => {
+    const el = document.getElementById('global-stats');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <section className="hero-section">
+      {/* Background layers */}
+      <div className="hero-section__bg primary-gradient-deep">
+        <div className="ambient-orb" style={{ width: 600, height: 600, top: '10%', left: '10%', background: '#6b5b95', animationDelay: '0s' }} />
+        <div className="ambient-orb" style={{ width: 400, height: 400, bottom: '15%', right: '15%', background: '#1a3a5c', animationDelay: '3s' }} />
+        <div className="ambient-orb" style={{ width: 300, height: 300, top: '50%', left: '50%', transform: 'translate(-50%,-50%)', background: '#2a5a8a', animationDelay: '6s' }} />
+
+        <div style={{
+          position: 'absolute', inset: 0,
+          backgroundImage: `
+            linear-gradient(rgba(107,91,149,0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(107,91,149,0.06) 1px, transparent 1px)
+          `,
+          backgroundSize: '60px 60px',
+        }} />
       </div>
 
-      
+      <div style={{
+        position: 'absolute', top: 80, right: 40, width: 120, height: 120,
+        borderTop: '2px solid rgba(107,91,149,0.25)', borderRight: '2px solid rgba(107,91,149,0.25)',
+        borderTopRightRadius: 16,
+      }} />
+      <div style={{
+        position: 'absolute', bottom: 40, left: 40, width: 80, height: 80,
+        borderBottom: '2px solid rgba(107,91,149,0.2)', borderLeft: '2px solid rgba(107,91,149,0.2)',
+        borderBottomLeftRadius: 16,
+      }} />
+
+      <div className="hero-section__content">
+        {/* Left: text */}
+        <motion.div
+          className="hero-section__text"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: 'easeOut' }}
+        >
+          <motion.div
+            className="hero-section__label"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            {data.label}
+          </motion.div>
+
+          <h1 className="hero-section__title">
+            <motion.span
+              className="hero-section__title-word hero-section__title-word--line1"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              {data.title}
+            </motion.span>
+            <motion.span
+              className="hero-section__title-word hero-section__title-word--line2"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.45 }}
+            >
+              {data.titleLine2}
+            </motion.span>
+            <motion.span
+              className="hero-section__title-word hero-section__title-word--line3"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              {data.titleLine3}
+            </motion.span>
+          </h1>
+
+          <motion.div
+            className="hero-section__divider"
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ delay: 0.75, duration: 0.6 }}
+          >
+            <div className="hero-section__divider-line" />
+            <div className="hero-section__divider-dot" />
+            <div className="hero-section__divider-line" style={{ transform: 'scaleX(-1)' }} />
+          </motion.div>
+
+          <motion.p
+            className="hero-section__subtitle"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.85, duration: 0.8 }}
+          >
+            {data.subtitle}
+          </motion.p>
+
+          <motion.p
+            className="hero-section__description"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.95, duration: 0.8 }}
+          >
+            {data.description}
+          </motion.p>
+
+          <motion.button
+            className="hero-section__scroll-btn"
+            onClick={scrollToContent}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.1, duration: 0.8 }}
+          >
+            <span>Xem nội dung</span>
+            <svg className="hero-section__scroll-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 5v14M5 12l7 7 7-7" />
+            </svg>
+          </motion.button>
+        </motion.div>
+
+        {/* Right: illustration with glassmorphism */}
+        <motion.div
+          className="hero-section__image-wrap"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.4, ease: 'easeOut' }}
+        >
+          <div style={{
+            borderRadius: 24,
+            overflow: 'hidden',
+            border: '1px solid rgba(107,91,149,0.2)',
+            background: 'rgba(255,255,255,0.05)',
+            backdropFilter: 'blur(12px)',
+            boxShadow: '0 16px 48px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.1)',
+            width: '100%',
+            maxWidth: 520,
+            position: 'relative',
+          }}>
+            <ImagePlaceholder
+              src={data.image}
+              alt="Hero illustration"
+              style={{ borderRadius: 0 }}
+            />
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 };
