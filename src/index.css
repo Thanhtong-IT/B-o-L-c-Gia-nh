@@ -172,6 +172,15 @@
   }
 
   /* ===================== */
+  /* CONCLUSION SECTION */
+  /* ===================== */
+  .conclusion-quote {
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.8);
+  }
+
+  /* ===================== */
   /* SECTION GRID 2 COLUMNS */
   /* ===================== */
   .section-grid-2col {

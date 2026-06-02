@@ -9,7 +9,6 @@ import AcademicSection from '../components/AcademicSection';
 import PolicyGapSection from '../components/PolicyGapSection';
 import LawSection from '../components/LawSection';
 import YouthSection from '../components/YouthSection';
-import ToolsSection from '../components/ToolsSection';
 import ConclusionSection from '../components/ConclusionSection';
 import Footer from '../components/Footer';
 import { presentationData } from '../data/presentationData';
@@ -27,7 +26,6 @@ const HomePage = () => {
       <PolicyGapSection data={presentationData.policyGap} />
       <LawSection data={presentationData.law} />
       <YouthSection data={presentationData.youth} />
-      <ToolsSection data={presentationData.tools} />
       <ConclusionSection data={presentationData.conclusion} />
       <Footer />
     </>
