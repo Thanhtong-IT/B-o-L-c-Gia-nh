@@ -6,7 +6,7 @@ export const presentationData = {
     titleLine3: "BẠO LỰC GIA ĐÌNH",
     subtitle: "Một góc nhìn ít được nhìn thấy trong xã hội hiện đại",
     description: "Bạo lực gia đình không phân biệt giới tính. Nam giới cũng có thể là nạn nhân cần được lắng nghe, bảo vệ và hỗ trợ.",
-    image: "/images/hero.jpg",
+    image: "/image/hero.jpg",
   },
 
   intro: {
@@ -17,7 +17,7 @@ export const presentationData = {
       "Nhiều nạn nhân sợ bị cười nhạo hoặc không được tin tưởng.",
       "Sự im lặng khiến họ trở thành nhóm nạn nhân ít được nhìn thấy.",
     ],
-    image: "/images/intro.jpg",
+    image: "/image/policy.jpg",
   },
 
   global: {
@@ -31,7 +31,7 @@ export const presentationData = {
       { icon: "target", title: "Thao túng tâm lý", desc: "Ghen tuông quá mức, cô lập, khống chế bằng tâm lý" },
       { icon: "shield", title: "Đe dọa quyền nuôi con", desc: "Dùng con cái làm công cụ kiểm soát và trừng phạt" },
     ],
-    image: "/images/global.jpg",
+    image: "/image/global.jpg",
   },
 
   silence: {
@@ -43,7 +43,7 @@ export const presentationData = {
       { icon: "help", title: "Không được tin tưởng", desc: "Xã hội khó chấp nhận đàn ông là nạn nhân." },
       { icon: "shield", title: "Áp lực nam tính", desc: "Phải mạnh mẽ, chịu đựng, không được yếu mềm." },
     ],
-    image: "/images/silence.jpg",
+    image: "/image/imlang.jpg",
   },
 
   consequences: {
@@ -68,7 +68,7 @@ export const presentationData = {
       { number: "2030", label: "Mục tiêu", sub: "Mở rộng tiếp cận dịch vụ hỗ trợ." },
     ],
     description: "Số liệu cho thấy vấn đề đang tồn tại nhưng vẫn chưa được nhìn nhận đầy đủ.",
-    image: "/images/vietnam.jpg",
+    image: "/image/Thuctrang.jpg",
   },
 
   academic: {
@@ -81,7 +81,7 @@ export const presentationData = {
     ],
     quote: "Gia đình là tế bào của xã hội.",
     quoteAuthor: "Hồ Chí Minh",
-    image: "/images/academic.jpg",
+    image: "/image/giadinh.jpg",
   },
 
   policyGap: {
@@ -93,7 +93,7 @@ export const presentationData = {
       { icon: "heartOff", title: "Hỗ trợ hạn chế", desc: "Nam giới khó tiếp cận tư vấn, pháp lý và nơi trú ẩn." },
       { icon: "users", title: "Định kiến xã hội", desc: "Nhiều người vẫn nghĩ đàn ông không thể là nạn nhân." },
     ],
-    image: "/images/support-gap.jpg",
+    image: "/image/khoangtrong.jpg",
   },
 
   law: {
@@ -105,7 +105,7 @@ export const presentationData = {
       { year: "2022", title: "Luật Phòng, chống bạo lực gia đình", desc: "Bảo vệ nạn nhân trước tổn hại thể chất, tinh thần, tình dục và kinh tế." },
       { year: "2030", title: "Chiến lược phát triển gia đình Việt Nam", desc: "Hướng tới gia đình no ấm, tiến bộ, hạnh phúc, bình đẳng." },
     ],
-    image: "/images/law.jpg",
+    image: "/image/phapli.jpg",
   },
 
   youth: {
@@ -117,7 +117,7 @@ export const presentationData = {
       { number: "03", icon: "code", title: "Ứng dụng công nghệ", desc: "Tạo nền tảng hỗ trợ và kết nối nạn nhân." },
       { number: "04", icon: "megaphone", title: "Lan tỏa nhận thức", desc: "Truyền thông đúng giúp giảm im lặng." },
     ],
-    image: "/images/youth.jpg",
+    image: "/image/thaydoi.jpg",
   },
 
   tools: {
@@ -138,6 +138,6 @@ export const presentationData = {
     titleLine2: "KHÔNG CÓ NGHĨA",
     titleLine3: "LÀ KHÔNG TỔN THƯƠNG",
     message: "Bạo lực gia đình không phân biệt giới tính. Mọi nạn nhân đều xứng đáng được lắng nghe, bảo vệ và hỗ trợ.",
-    image: "/images/conclusion.jpg",
+    image: "/image/LastHero.jpg",
   },
 };

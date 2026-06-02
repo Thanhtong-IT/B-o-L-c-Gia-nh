@@ -27,17 +27,13 @@ const HeroSection = ({ data }) => {
         <div className="absolute inset-0 bg-gradient-to-br from-soviet-red/10 via-white to-soviet-gold/5" />
       )}
 
-      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto hero-content">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: 'easeOut' }}
         >
-          <div className="mb-6 inline-block bg-soviet-red text-white px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em] shadow-lg shadow-soviet-red/20">
-            {data.label}
-          </div>
-
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white mb-8 uppercase leading-none">
+          <h1 className="text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter text-white mb-8 uppercase leading-none">
             {data.title}
             <br />
             <span className="text-soviet-gold">{data.titleLine2}</span>
@@ -52,7 +48,7 @@ const HeroSection = ({ data }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 1 }}
-          className="text-xl md:text-3xl font-serif italic text-zinc-100 leading-snug max-w-3xl mx-auto mb-6"
+          className="text-2xl md:text-4xl font-serif italic text-zinc-100 leading-snug max-w-3xl mx-auto mb-6"
         >
           "{data.subtitle}"
         </motion.p>
@@ -61,7 +57,7 @@ const HeroSection = ({ data }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.1, duration: 1 }}
-          className="text-sm md:text-base text-white/70 max-w-xl mx-auto mb-12 leading-relaxed"
+          className="text-lg md:text-xl text-white/70 max-w-xl mx-auto mb-12 leading-relaxed"
         >
           {data.description}
         </motion.p>
@@ -71,7 +67,7 @@ const HeroSection = ({ data }) => {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.4, duration: 0.8 }}
           onClick={scrollToContent}
-          className="inline-flex items-center gap-3 text-xs font-black uppercase tracking-[0.2em] text-white/80 hover:text-white transition-colors border border-white/30 hover:border-white/60 px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 backdrop-blur-sm"
+          className="inline-flex items-center gap-3 text-base font-black uppercase tracking-[0.2em] text-white/80 hover:text-white transition-colors border border-white/30 hover:border-white/60 px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 backdrop-blur-sm"
         >
           Xem nội dung
           <svg className="w-4 h-4 animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

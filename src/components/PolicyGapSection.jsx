@@ -20,15 +20,15 @@ const PolicyGapSection = ({ data }) => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="mb-4 inline-block bg-soviet-red/10 text-soviet-red px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.25em]">
+          <div className="mb-4 inline-block bg-soviet-red/10 text-soviet-red px-5 py-2 rounded-full text-base font-black uppercase tracking-[0.25em]">
             {data.label}
           </div>
-          <h2 className="text-3xl md:text-5xl font-black text-zinc-900 mb-6 tracking-tight leading-tight">
+          <h2 className="text-5xl md:text-6xl font-black text-zinc-900 mb-6 tracking-tight leading-tight">
             {data.title}
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="section-stretch-grid">
           {/* Cards */}
           <div className="space-y-5">
             {data.cards.map((card, i) => (
@@ -38,26 +38,26 @@ const PolicyGapSection = ({ data }) => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.12 }}
-                className="glow-card p-5 rounded-xl flex items-start gap-4 group"
+                className="info-card glow-card rounded-xl flex items-start gap-4 group"
               >
                 <div className="flex-shrink-0 transform transition-transform group-hover:scale-110 duration-300 p-3 bg-soviet-red/5 rounded-lg">
                   {ICON_MAP[card.icon] || ICON_MAP.barChart}
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-zinc-900 mb-1">{card.title}</h3>
-                  <p className="text-zinc-500 text-sm leading-relaxed">{card.desc}</p>
+                  <h3 className="card-title text-zinc-900 mb-1">{card.title}</h3>
+                  <p className="card-description text-zinc-500">{card.desc}</p>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          {/* Image */}
+          {/* Image — stretches to match left column height */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="h-72 md:h-96"
+            className="section-image-stretch"
           >
             <ImagePlaceholder src={data.image} alt="Khoảng trống chính sách" className="w-full h-full" />
           </motion.div>

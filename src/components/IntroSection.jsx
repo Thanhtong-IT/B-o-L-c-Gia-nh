@@ -14,10 +14,10 @@ const IntroSection = ({ data }) => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="mb-4 inline-block bg-soviet-red/10 text-soviet-red px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.25em]">
+          <div className="mb-4 inline-block bg-soviet-red/10 text-soviet-red px-5 py-2 rounded-full text-base font-black uppercase tracking-[0.25em]">
             {data.label}
           </div>
-          <h2 className="text-3xl md:text-5xl font-black text-zinc-900 mb-6 tracking-tight leading-tight">
+          <h2 className="text-5xl md:text-6xl font-black text-zinc-900 mb-6 tracking-tight leading-tight">
             {data.title}
           </h2>
         </motion.div>
@@ -34,10 +34,10 @@ const IntroSection = ({ data }) => {
                 transition={{ duration: 0.5, delay: i * 0.15 }}
                 className="flex items-start gap-4 p-6 rounded-xl glow-card"
               >
-                <div className="flex-shrink-0 w-8 h-8 bg-soviet-red/10 rounded-full flex items-center justify-center">
-                  <CheckCircle className="w-5 h-5 text-soviet-red" />
+                <div className="flex-shrink-0 w-10 h-10 bg-soviet-red/10 rounded-full flex items-center justify-center">
+                  <CheckCircle className="w-6 h-6 text-soviet-red" />
                 </div>
-                <p className="text-zinc-700 text-base leading-relaxed font-medium pt-1">
+                <p className="text-zinc-700 text-xl leading-relaxed font-medium pt-1">
                   {point}
                 </p>
               </motion.div>

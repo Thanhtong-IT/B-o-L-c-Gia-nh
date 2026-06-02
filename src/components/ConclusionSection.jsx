@@ -61,7 +61,7 @@ const ConclusionSection = ({ data }) => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="text-xl md:text-3xl font-serif italic text-zinc-700 leading-snug mb-12"
+          className="text-4xl md:text-5xl font-serif italic text-zinc-700 leading-snug mb-12"
         >
           "{data.message}"
         </motion.p>
@@ -73,7 +73,7 @@ const ConclusionSection = ({ data }) => {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="inline-block"
         >
-          <div className="px-8 py-4 bg-soviet-gold text-white font-black text-xs uppercase tracking-[0.2em] rounded-full shadow-lg shadow-soviet-gold/20">
+          <div className="px-6 py-3 bg-soviet-gold text-white font-black text-base uppercase tracking-[0.2em] rounded-full shadow-lg shadow-soviet-gold/20">
             Bình đẳng giới &bull; Mọi nạn nhân đều xứng đáng được bảo vệ
           </div>
         </motion.div>

@@ -22,10 +22,10 @@ const ConsequencesSection = ({ data }) => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="mb-4 inline-block bg-soviet-red/10 text-soviet-red px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.25em]">
+          <div className="mb-4 inline-block bg-soviet-red/10 text-soviet-red px-5 py-2 rounded-full text-base font-black uppercase tracking-[0.25em]">
             {data.label}
           </div>
-          <h2 className="text-3xl md:text-5xl font-black text-zinc-900 mb-6 tracking-tight leading-tight">
+          <h2 className="text-5xl md:text-6xl font-black text-zinc-900 mb-6 tracking-tight leading-tight">
             {data.title}
           </h2>
         </motion.div>
@@ -39,14 +39,15 @@ const ConsequencesSection = ({ data }) => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="glow-card p-6 rounded-xl text-center group"
+              style={{ minHeight: '140px' }}
             >
               <div className="mb-4 mx-auto transform transition-transform group-hover:scale-110 duration-300 p-3 bg-soviet-red/5 rounded-full w-fit">
                 <div className="text-soviet-red">
                   {ICON_MAP[item.icon] || ICON_MAP.frown}
                 </div>
               </div>
-              <h3 className="text-sm font-bold text-zinc-900 mb-2">{item.title}</h3>
-              <p className="text-zinc-500 text-xs leading-relaxed">{item.desc}</p>
+              <h3 className="text-xl font-bold text-zinc-900 mb-2">{item.title}</h3>
+              <p className="text-zinc-500 text-xl leading-relaxed">{item.desc}</p>
             </motion.div>
           ))}
         </div>

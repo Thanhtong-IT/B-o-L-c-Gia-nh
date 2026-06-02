@@ -13,15 +13,15 @@ const LawSection = ({ data }) => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="mb-4 inline-block bg-soviet-red/10 text-soviet-red px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.25em]">
+          <div className="mb-4 inline-block bg-soviet-red/10 text-soviet-red px-5 py-2 rounded-full text-base font-black uppercase tracking-[0.25em]">
             {data.label}
           </div>
-          <h2 className="text-3xl md:text-5xl font-black text-zinc-900 mb-6 tracking-tight leading-tight">
+          <h2 className="text-5xl md:text-6xl font-black text-zinc-900 mb-6 tracking-tight leading-tight">
             {data.title}
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 items-start">
+        <div className="section-stretch-grid">
           {/* Timeline */}
           <div className="space-y-6">
             {data.items.map((item, i) => (
@@ -31,26 +31,26 @@ const LawSection = ({ data }) => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
-                className="flex items-start gap-5 p-5 rounded-xl glow-card"
+                className="info-card glow-card rounded-xl flex items-start gap-5"
               >
-                <div className="flex-shrink-0 w-16 h-16 bg-soviet-red text-white rounded-xl flex flex-col items-center justify-center font-black text-sm shadow-md shadow-soviet-red/20">
+                <div className="flex-shrink-0 w-20 h-20 bg-soviet-red text-white rounded-xl flex flex-col items-center justify-center font-black text-2xl shadow-md shadow-soviet-red/20">
                   {item.year}
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-zinc-900 mb-1">{item.title}</h3>
-                  <p className="text-zinc-500 text-sm leading-relaxed">{item.desc}</p>
+                  <h3 className="card-title text-zinc-900 mb-1">{item.title}</h3>
+                  <p className="card-description text-zinc-500">{item.desc}</p>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          {/* Image */}
+          {/* Image — stretches to match left column height */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="h-72 md:h-96"
+            className="section-image-stretch"
           >
             <ImagePlaceholder src={data.image} alt="Pháp luật" className="w-full h-full" />
           </motion.div>
