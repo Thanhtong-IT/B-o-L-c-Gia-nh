@@ -31,7 +31,7 @@ export const presentationData = {
       { icon: "target", title: "Thao túng tâm lý", desc: "Ghen tuông quá mức, cô lập, khống chế bằng tâm lý" },
       { icon: "shield", title: "Đe dọa quyền nuôi con", desc: "Dùng con cái làm công cụ kiểm soát và trừng phạt" },
     ],
-    image: "/image/global.jpg",
+    image: "/image/Global001.jpg",
   },
 
   silence: {
