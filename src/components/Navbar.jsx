@@ -6,8 +6,6 @@ const navItems = [
   { name: 'Tổng quan', id: 'overview', path: '/' },
   { name: 'Lý thuyết', id: 'theory', path: '/home' },
   { name: 'Toàn cầu', id: 'global', path: '/home' },
-  { name: 'Im lặng', id: 'silence', path: '/home' },
-  { name: 'Hậu quả', id: 'consequences', path: '/home' },
   { name: 'Việt Nam', id: 'vietnam', path: '/home' },
   { name: 'Học thuật', id: 'academic', path: '/home' },
   { name: 'Pháp luật', id: 'law', path: '/home' },

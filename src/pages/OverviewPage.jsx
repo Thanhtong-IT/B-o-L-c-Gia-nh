@@ -20,14 +20,11 @@ const teamMembers = [
 ];
 
 const topics = [
-  'Mối liên hệ giữa nam giới và bạo lực gia đình',
-  'Thực trạng toàn cầu',
-  'Im lặng và định kiến xã hội',
-  'Hậu quả tâm lý và sức khỏe',
+  'Bức tranh toàn cảnh',
   'Thực trạng tại Việt Nam',
-  'Góc nhìn học thuật',
-  'Khung pháp lý',
-  'Vai trò của thế hệ trẻ',
+  'Chiều sâu học thuật',
+  'Khung pháp lý và định hướng chính sách',
+  'Trách nhiệm của thế hệ trẻ',
 ];
 
 const OverviewPage = () => {

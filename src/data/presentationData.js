@@ -6,7 +6,7 @@ export const presentationData = {
     titleLine3: "BẠO LỰC GIA ĐÌNH",
     subtitle: "Một góc nhìn ít được nhìn thấy trong xã hội hiện đại",
     description: "Bạo lực gia đình không phân biệt giới tính. Nam giới cũng có thể là nạn nhân cần được lắng nghe, bảo vệ và hỗ trợ.",
-    image: "/image/hero.jpg",
+    image: "/image/Hero01.jpg",
   },
 
   intro: {
@@ -62,10 +62,27 @@ export const presentationData = {
     label: "Thực trạng Việt Nam",
     title: "Nam giới – nạn nhân \"vô hình\" tại Việt Nam",
     stats: [
-      { number: "379", label: "Nam giới", sub: "Bị bạo lực gia đình theo số liệu trong bài." },
-      { number: "17,6%", label: "Tỷ lệ", sub: "Nam giới bị bạo hành năm 2023." },
-      { number: "+92", label: "So với năm trước", sub: "Số nam giới tăng." },
-      { number: "2030", label: "Mục tiêu", sub: "Mở rộng tiếp cận dịch vụ hỗ trợ." },
+      {
+        number: "379",
+        label: "NAM GIỚI",
+        sub: "Bị bạo lực gia đình theo số liệu 2025.",
+        source: "Nguồn: Báo Thanh Niên",
+        sourceUrl: "https://thanhnien.vn/nam-gioi-bi-bao-luc-gia-dinh-ngay-cang-tang-185260416110219629.htm",
+      },
+      {
+        number: "+92",
+        label: "SO VỚI NĂM TRƯỚC",
+        sub: "Số nam giới tăng so với năm trước.",
+        source: "Nguồn: Báo Thanh Niên",
+        sourceUrl: "https://thanhnien.vn/nam-gioi-bi-bao-luc-gia-dinh-ngay-cang-tang-185260416110219629.htm",
+      },
+      {
+        number: "17,6%",
+        label: "TỶ LỆ",
+        sub: "Nam giới bị bạo hành năm 2023.",
+        source: "Nguồn: Báo Phụ nữ Việt Nam",
+        sourceUrl: "https://phunuvietnam.vn/co-nam-gioi-phai-nhan-nhin-tinh-nong-cua-vo-de-em-am-cua-nha-20240628090024853.htm",
+      },
     ],
     description: "Số liệu cho thấy vấn đề đang tồn tại nhưng vẫn chưa được nhìn nhận đầy đủ.",
     image: "/image/Thuctrang.jpg",

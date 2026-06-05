@@ -41,7 +41,16 @@ const GlobalSection = ({ data }) => {
             <p className="stat-text">
               Nam giới chiếm từ 33% đến 50% nạn nhân bạo lực gia đình trong một số nghiên cứu tại Mỹ, Canada, Úc và Vương quốc Anh.
             </p>
-            <div className="stat-source">Nguồn: Journal of Men's Health</div>
+            <div className="stat-source">
+              <a
+                href="https://oss.jomh.org/files/article/20250805-596/pdf/JOMH2025032001.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="source-link"
+              >
+                Nguồn: Journal of Men's Health
+              </a>
+            </div>
           </div>
         </motion.div>
 
