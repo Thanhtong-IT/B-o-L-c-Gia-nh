@@ -106,6 +106,16 @@ export const presentationData = {
         icon: "scale",
         title: "Bình đẳng giới trong gia đình",
         desc: "Nam và nữ đều bình đẳng, mọi nạn nhân đều cần được bảo vệ.",
+        bulletPoints: [
+          {
+            label: "Luật Bình đẳng giới 2006:",
+            text: "Nam, nữ bình đẳng trong gia đình và xã hội.",
+          },
+          {
+            label: "Luật Phòng, chống bạo lực gia đình 2022:",
+            text: "Bạo lực gia đình có thể gây tổn hại về thể chất, tinh thần, tình dục và kinh tế.",
+          },
+        ],
         source: "Nguồn: Luật Bình đẳng giới 2006; Luật Phòng, chống bạo lực gia đình 2022",
         sourceLink: {
           text: "Luật số 73/2006/QH11 của Quốc hội: Luật Bình đẳng giới",

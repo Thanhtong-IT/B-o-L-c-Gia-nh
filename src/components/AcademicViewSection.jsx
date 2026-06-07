@@ -54,7 +54,18 @@ const AcademicViewSection = ({ data }) => {
                 </div>
               </div>
               <div className="academic-card__title">{card.title}</div>
-              <div className="academic-card__desc">{card.desc}</div>
+              {card.bulletPoints ? (
+                <div className="academic-card__bullets">
+                  {card.bulletPoints.map((bp, bi) => (
+                    <div key={bi} className="academic-card__bullet-item">
+                      <span className="academic-card__bullet-label">{bp.label}</span>
+                      <span className="academic-card__bullet-text">{bp.text}</span>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="academic-card__desc">{card.desc}</div>
+              )}
               {card.source && (
                 <div style={{ marginTop: 12, paddingTop: 12, borderTop: '1px solid rgba(107,91,149,0.15)' }}>
                   <p style={{ fontSize: '0.75rem', color: 'rgba(139,123,181,0.7)', lineHeight: 1.6 }}>

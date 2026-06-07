@@ -42,7 +42,18 @@ const AcademicSection = ({ data }) => {
                 {ICON_MAP[card.icon] || ICON_MAP.book}
               </div>
               <h3 className="card-title text-zinc-900 mb-3">{card.title}</h3>
-              <p className="card-description text-zinc-500">{card.desc}</p>
+              {card.bulletPoints ? (
+                <div className="flex flex-col gap-2">
+                  {card.bulletPoints.map((bp, bi) => (
+                    <div key={bi}>
+                      <span className="block font-bold text-zinc-700 text-sm leading-snug">{bp.label}</span>
+                      <span className="block text-zinc-500 text-sm leading-relaxed">{bp.text}</span>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p className="card-description text-zinc-500">{card.desc}</p>
+              )}
               {card.source && (
                 <div className="mt-3 pt-3 border-t border-zinc-200">
                   <p className="text-xs text-zinc-400 leading-relaxed">

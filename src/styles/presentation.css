@@ -593,9 +593,35 @@
 }
 
 .academic-card__desc {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: #6b7280;
   line-height: 1.6;
+}
+
+.academic-card__bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.academic-card__bullet-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.academic-card__bullet-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #4a5568;
+  line-height: 1.4;
+}
+
+.academic-card__bullet-text {
+  font-size: 0.78rem;
+  color: #6b7280;
+  line-height: 1.5;
+  padding-left: 0;
 }
 
 .academic-view__quote-box {
