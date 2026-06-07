@@ -14,10 +14,15 @@ const LawTimelineSection = ({ data }) => {
         >
           <div className="presentation-section__label">{data.label}</div>
           <h2 className="presentation-section__title" style={{ color: 'white' }}>{data.title}</h2>
+          {data.subtitle && (
+            <p style={{ color: 'rgba(255,255,255,0.65)', marginTop: 8, fontSize: '1.05rem' }}>
+              {data.subtitle}
+            </p>
+          )}
         </motion.div>
 
         <div className="timeline">
-          {data.items.map((item, i) => (
+          {data.cards.map((card, i) => (
             <motion.div
               key={i}
               className="timeline-item"
@@ -27,9 +32,20 @@ const LawTimelineSection = ({ data }) => {
               transition={{ duration: 0.5, delay: i * 0.15 }}
             >
               <div className="timeline-item__dot" />
-              <div className="timeline-item__year">{item.year}</div>
-              <div className="timeline-item__title">{item.title}</div>
-              <div className="timeline-item__desc">{item.desc}</div>
+              <div className="timeline-item__year">{card.year}</div>
+              <div className="timeline-item__title">{card.title}</div>
+              <div className="timeline-item__desc">
+                {card.lines.map((line, j) => (
+                  <div key={j} style={{ marginBottom: j < card.lines.length - 1 ? 6 : 0 }}>
+                    {line.label && (
+                      <span style={{ fontWeight: 700, color: '#ef4444', marginRight: 4 }}>
+                        {line.label}:
+                      </span>
+                    )}
+                    "{line.text}"
+                  </div>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>

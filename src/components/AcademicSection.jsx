@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Scale, Heart, Shield } from 'lucide-react';
+import { BookOpen, Scale, Pencil } from 'lucide-react';
 import ImagePlaceholder from './ImagePlaceholder';
 
 const ICON_MAP = {
+  book: <BookOpen className="w-7 h-7 text-soviet-red" />,
   scale: <Scale className="w-7 h-7 text-soviet-red" />,
-  heart: <Heart className="w-7 h-7 text-soviet-red" />,
-  shield: <Shield className="w-7 h-7 text-soviet-red" />,
+  pencil: <Pencil className="w-7 h-7 text-soviet-red" />,
 };
 
 const AcademicSection = ({ data }) => {
@@ -39,10 +39,27 @@ const AcademicSection = ({ data }) => {
               className="info-card glow-card rounded-xl group"
             >
               <div className="mb-5 transform transition-transform group-hover:scale-110 duration-300 p-3 bg-soviet-red/5 rounded-lg w-fit">
-                {ICON_MAP[card.icon] || ICON_MAP.heart}
+                {ICON_MAP[card.icon] || ICON_MAP.book}
               </div>
               <h3 className="card-title text-zinc-900 mb-3">{card.title}</h3>
               <p className="card-description text-zinc-500">{card.desc}</p>
+              {card.source && (
+                <div className="mt-3 pt-3 border-t border-zinc-200">
+                  <p className="text-xs text-zinc-400 leading-relaxed">
+                    {card.source}
+                    {card.sourceLink && (
+                      <a
+                        href={card.sourceLink.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-500 underline underline-offset-2 hover:text-blue-700 ml-1"
+                      >
+                        {card.sourceLink.text}
+                      </a>
+                    )}
+                  </p>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>

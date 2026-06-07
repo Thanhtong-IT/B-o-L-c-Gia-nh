@@ -2,6 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const ICON_MAP = {
+  book: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+    </svg>
+  ),
   scale: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
       <line x1="12" y1="3" x2="12" y2="21" />
@@ -10,14 +15,9 @@ const ICON_MAP = {
       <path d="M17 17l-5-5-5 5" />
     </svg>
   ),
-  heart: (
+  pencil: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
-    </svg>
-  ),
-  shield: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      <path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
     </svg>
   ),
 };
@@ -50,11 +50,28 @@ const AcademicViewSection = ({ data }) => {
             >
               <div className="academic-card__icon-wrap">
                 <div className="academic-card__icon">
-                  {ICON_MAP[card.icon] || ICON_MAP.heart}
+                  {ICON_MAP[card.icon] || ICON_MAP.book}
                 </div>
               </div>
               <div className="academic-card__title">{card.title}</div>
               <div className="academic-card__desc">{card.desc}</div>
+              {card.source && (
+                <div style={{ marginTop: 12, paddingTop: 12, borderTop: '1px solid rgba(107,91,149,0.15)' }}>
+                  <p style={{ fontSize: '0.75rem', color: 'rgba(139,123,181,0.7)', lineHeight: 1.6 }}>
+                    {card.source}
+                    {card.sourceLink && (
+                      <a
+                        href={card.sourceLink.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: '#6b8cce', textDecoration: 'underline', textUnderlineOffset: '2px', marginLeft: 4 }}
+                      >
+                        {card.sourceLink.text}
+                      </a>
+                    )}
+                  </p>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
@@ -135,20 +152,22 @@ const AcademicViewSection = ({ data }) => {
           </p>
 
           {/* Note below quote */}
-          <div style={{
-            paddingTop: 20,
-            borderTop: '1px solid rgba(107,91,149,0.15)',
-            marginTop: 4,
-          }}>
-            <p style={{
-              fontSize: '0.82rem',
-              color: 'rgba(255,255,255,0.6)',
-              lineHeight: 1.7,
-              fontStyle: 'italic',
+          {data.quoteNote && (
+            <div style={{
+              paddingTop: 20,
+              borderTop: '1px solid rgba(107,91,149,0.15)',
+              marginTop: 4,
             }}>
-              {data.quoteNote}
-            </p>
-          </div>
+              <p style={{
+                fontSize: '0.82rem',
+                color: 'rgba(255,255,255,0.6)',
+                lineHeight: 1.7,
+                fontStyle: 'italic',
+              }}>
+                {data.quoteNote}
+              </p>
+            </div>
+          )}
         </motion.div>
       </div>
     </section>

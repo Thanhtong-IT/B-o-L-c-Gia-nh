@@ -89,50 +89,113 @@ export const presentationData = {
   },
 
   academic: {
-    label: "Góc nhìn học thuật",
-    title: "Gia đình bình đẳng – nền tảng của xã hội tiến bộ",
+    label: "Chương 3 – Chiều sâu học thuật",
+    title: "Bạo lực gia đình đối với nam giới",
     cards: [
-      { icon: "scale", title: "Bình đẳng", desc: "Mọi thành viên đều có quyền được tôn trọng." },
-      { icon: "heart", title: "Tự nguyện", desc: "Gia đình không thể xây dựng bằng ép buộc." },
-      { icon: "shield", title: "Không bạo lực", desc: "Bạo lực đi ngược lại giá trị tốt đẹp của gia đình." },
+      {
+        icon: "book",
+        title: "Quan điểm Mác – Lênin và Hồ Chí Minh",
+        desc: "Gia đình trong CNXH dựa trên bình đẳng, tự nguyện và tiến bộ.",
+        source: "Nguồn: Tạp chí Cộng sản, bài Vận dụng quan điểm của Chủ tịch Hồ Chí Minh về gia đình trong xây dựng chính sách hiện nay (",
+        sourceLink: {
+          text: "VĂN HÓA - XÃ HỘI - Tạp chí Cộng sản",
+          url: "https://www.tapchicongsan.org.vn/web/guest/van_hoa_xa_hoi/-/2018/1009302/view_content?",
+        },
+      },
+      {
+        icon: "scale",
+        title: "Bình đẳng giới trong gia đình",
+        desc: "Nam và nữ đều bình đẳng, mọi nạn nhân đều cần được bảo vệ.",
+        source: "Nguồn: Luật Bình đẳng giới 2006; Luật Phòng, chống bạo lực gia đình 2022",
+        sourceLink: {
+          text: "Luật số 73/2006/QH11 của Quốc hội: Luật Bình đẳng giới",
+          url: "https://chinhphu.vn/default.aspx?docid=28975&pageid=27160",
+        },
+      },
+      { icon: "pencil", title: "Hướng bổ sung cho giáo trình", desc: "Giúp giáo trình phản ánh đầy đủ thực tế về bạo lực gia đình." },
     ],
     quote: "Gia đình là tế bào của xã hội.",
-    quoteAuthor: "Hồ Chí Minh",
+    quoteAuthor: "TƯ TƯỞNG HỒ CHÍ MINH",
     image: "/image/giadinh.jpg",
-  },
-
-  policyGap: {
-    label: "Khoảng trống",
-    title: "Khoảng trống cần được nhìn nhận",
-    cards: [
-      { icon: "barChart", title: "Thiếu dữ liệu", desc: "Nam giới ít được đại diện trong thống kê." },
-      { icon: "megaphone", title: "Ít truyền thông", desc: "Chiến dịch thường tập trung vào phụ nữ và trẻ em." },
-      { icon: "heartOff", title: "Hỗ trợ hạn chế", desc: "Nam giới khó tiếp cận tư vấn, pháp lý và nơi trú ẩn." },
-      { icon: "users", title: "Định kiến xã hội", desc: "Nhiều người vẫn nghĩ đàn ông không thể là nạn nhân." },
-    ],
-    image: "/image/khoangtrong.jpg",
   },
 
   law: {
     label: "Pháp luật",
-    title: "Khung pháp lý bảo vệ mọi nạn nhân",
-    items: [
-      { year: "2013", title: "Hiến pháp Việt Nam", desc: "Mọi người đều bình đẳng trước pháp luật." },
-      { year: "2006", title: "Luật Bình đẳng giới", desc: "Nam và nữ bình đẳng trong gia đình và xã hội." },
-      { year: "2022", title: "Luật Phòng, chống bạo lực gia đình", desc: "Bảo vệ nạn nhân trước tổn hại thể chất, tinh thần, tình dục và kinh tế." },
-      { year: "2030", title: "Chiến lược phát triển gia đình Việt Nam", desc: "Hướng tới gia đình no ấm, tiến bộ, hạnh phúc, bình đẳng." },
+    title: "Khung pháp lý và định hướng chính sách",
+    subtitle: "Từ Hiến pháp 2013 đến Chiến lược phát triển gia đình Việt Nam 2030–2045",
+    cards: [
+      {
+        year: "2013",
+        title: "Hiến pháp năm 2013",
+        lines: [
+          { label: "Điều 16", text: "Mọi người đều bình đẳng trước pháp luật." },
+          { label: "Điều 26", text: "Công dân nam, nữ bình đẳng về mọi mặt." },
+          { label: "Điều 36", text: "Nam, nữ có quyền kết hôn, ly hôn. Hôn nhân theo nguyên tắc tự nguyện, tiến bộ." },
+        ],
+      },
+      {
+        year: "2022",
+        title: "Luật Phòng, chống bạo lực gia đình",
+        lines: [
+          { text: "Nghị định 282/2025/NĐ-CP đã mở rộng phạm vi nhận diện các hành vi bạo lực, tạo cơ sở cho việc ghi nhận đa dạng hơn các hình thức bạo lực (bao gồm bạo lực tinh thần)." },
+        ],
+      },
+      {
+        year: "2026",
+        title: "Luật Bình đẳng giới và Văn kiện Đảng",
+        lines: [
+          { text: "Luật Bình đẳng giới (Văn bản hợp nhất 45/VBHN-VPQH 2026) – khung pháp lý quan trọng về bình đẳng giới trong mọi lĩnh vực, bao gồm gia đình." },
+        ],
+      },
+      {
+        year: "2030–2045",
+        title: "Chiến lược phát triển gia đình Việt Nam",
+        lines: [
+          { text: "Quyết định 2238/QĐ-TTg phê duyệt Chiến lược phát triển gia đình Việt Nam đến năm 2030:" },
+          { text: "Mục tiêu xây dựng gia đình Việt Nam no ấm, tiến bộ, hạnh phúc, là tổ ấm của mỗi người." },
+        ],
+      },
     ],
     image: "/image/phapli.jpg",
   },
 
   youth: {
     label: "Thế hệ trẻ",
-    title: "Thay đổi bắt đầu từ nhận thức",
+    title: "Trách nhiệm của thế hệ trẻ",
+    subtitle: "Khi chúng ta ra trường và xây dựng gia đình",
     cards: [
-      { number: "01", icon: "eye", title: "Phá bỏ định kiến", desc: "Đàn ông cũng có thể là nạn nhân." },
-      { number: "02", icon: "users", title: "Tôn trọng lẫn nhau", desc: "Gia đình cần đối thoại và bình đẳng." },
-      { number: "03", icon: "code", title: "Ứng dụng công nghệ", desc: "Tạo nền tảng hỗ trợ và kết nối nạn nhân." },
-      { number: "04", icon: "megaphone", title: "Lan tỏa nhận thức", desc: "Truyền thông đúng giúp giảm im lặng." },
+      {
+        icon: "graduation",
+        title: "Trách nhiệm của mỗi cá nhân sau khi tốt nghiệp FPT",
+        points: [
+          "Nâng cao nhận thức",
+          'Phá bỏ định kiến: "Đàn ông không thể là nạn nhân"',
+          "Góp phần thay đổi nhận thức cộng đồng",
+          "Truyền thông, công nghệ và chuyên môn phục vụ cộng đồng",
+        ],
+      },
+      {
+        icon: "home",
+        title: "Xây dựng gia đình trong tương lai – Từ bài học thực tiễn",
+        points: [
+          "Phá bỏ định kiến",
+          "Tôn trọng lẫn nhau",
+          "Ứng xử bình đẳng",
+          "Nhận diện sớm dấu hiệu bạo lực gia đình",
+          "Tự bảo vệ và bảo vệ người thân",
+        ],
+      },
+      {
+        icon: "megaphone",
+        title: "Kêu gọi hành động",
+        points: [
+          "Chủ động tìm hiểu pháp luật",
+          "Tìm hiểu Luật Phòng, chống bạo lực gia đình 2022",
+          "Tìm hiểu Nghị định 282/2025/NĐ-CP",
+          "Tham gia tuyên truyền trong cộng đồng",
+          'Lan tỏa thông điệp bình đẳng và không bạo lực',
+        ],
+      },
     ],
     image: "/image/thaydoi.jpg",
   },
